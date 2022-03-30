@@ -31,5 +31,5 @@ reactを本番モードで正しくバンドルし、ビルドを最適化して
 ビルドは縮小され、ファイル名にはハッシュが含まれます。\
 アプリをデプロイする準備が整いました。
 
-詳細については、[デプロイ]（https://facebook.github.io/create-react-app/docs/deployment）に関するセクションを参照してください。
+詳細については、[デプロイ](https://facebook.github.io/create-react-app/docs/deployment) に関するセクションを参照してください。
 
