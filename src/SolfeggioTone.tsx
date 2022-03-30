@@ -2,12 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Button from '@material-ui/core/Button';
 
 //------------------------------------------------------------
-//window.AudioContext = window.AudioContext || window.webkitAudioContext;
-//let audioContext: AudioContext = new AudioContext();
-//let audioContext: AudioContext | undefined = undefined;
-// let audioContext = new(window.AudioContext() || window.webkitAudioContext());
-// let oscillatorNode: OscillatorNode = audioContext.createOscillator();
-// let gainNode: GainNode = audioContext.createGain();
 
 let audioContext: AudioContext | undefined;
 let oscillatorNode: OscillatorNode | undefined;
@@ -34,10 +28,7 @@ function changeSound(freq: number) {
 }
 
 function playSound(freq: number) {
-//  window.AudioContext = window.AudioContext || window.webkitAudioContext;
   audioContext = new AudioContext();
-console.log(`init AudioContext():`);
-console.log(audioContext);
   oscillatorNode = audioContext.createOscillator();
   gainNode = audioContext.createGain();
 
@@ -45,8 +36,6 @@ console.log(audioContext);
   gainNode.connect(audioContext.destination);
 
   oscillatorNode.type = 'sine';	// sine,square,sawtooth, triangle
-//  oscillatorNode.type = 'sawtooth';	// sine,square,sawtooth, triangle
-
   oscillatorNode.frequency.setValueAtTime(freq, audioContext.currentTime)
   gainNode.gain.value = 0.0;
   oscillatorNode.start(audioContext.currentTime);
